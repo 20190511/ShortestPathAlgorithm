@@ -1,5 +1,7 @@
 # Cht 9. 최단 경로 
 ---
+A. Heap 구조 예시 : [HeapExample.py](https://github.com/20190511/ShortestPathAlgorithm/blob/main/heap_example.py)
+---
 ## 다익스트라 (Dijkstra, 한 지점에서 모든지점의 최단경로 (Greedy, O(ElogV))
 1. 경로표시 다익스트라 [Dijkstra with navigation.py](https://github.com/20190511/ShortestPathAlgorithm/blob/main/dijkstra/dijkstra%20with%20navigation.py)
 2. 다익스트라 구현 [dijkstra.py](https://github.com/20190511/ShortestPathAlgorithm/blob/main/dijkstra/dijkstra.py)
@@ -17,5 +19,4 @@
 6. [A-40 숨바꼭질](https://github.com/20190511/ShortestPathAlgorithm/blob/main/%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/A-40.py "USACO-다익스트라 ")
 7. [A-40 숨바꼭질(BFS 풀이)](https://github.com/20190511/ShortestPathAlgorithm/blob/main/%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/A-40(BFS).py "USACO-BFS 풀이")
 ---
-A. Heap 구조 예시 : [HeapExample.py](https://github.com/20190511/ShortestPathAlgorithm/blob/main/heap_example.py)
----
+
