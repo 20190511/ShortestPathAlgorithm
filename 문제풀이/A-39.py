@@ -1,0 +1,96 @@
+"""
+A39. 화성탐사
+문제: N by N 크기의 맵이 주어졌을 때, 각 칸은 해당 칸을 지나갈 때의 비용을 의미한다.
+(0,0) 위치에서 시작해서 상하좌우로만 이동할 수 있을 때 (n-1,n-1) 위치로 가려고할 때의
+최소 비용을 구하여라. (탐사는 맵의 크기를 벗어날 수 없음)
+
+첫 째줄에 T 케이스 T(1<=T<=10)가 주어진다
+매 테스트 케이스마다 탐사크기를 의미하는 N 이 주어진다 (2<=N<=125)
+이어서 N개의 줄에걸쳐 각 칸의 비용이 주어지며 공백으로 구분한다. (0<=각 칸의 비용<=9)
+
+[INPUT]
+3
+3
+5 5 4
+3 9 1
+3 2 7
+5
+3 7 2 0 1
+2 8 0 9 1
+1 2 1 8 1
+9 8 9 2 0
+3 6 5 1 5
+7
+9 0 5 1 1 5 3
+4 1 2 1 6 5 4
+0 7 6 1 6 8 5
+1 1 7 8 3 2 3
+9 4 0 7 6 4 1
+5 8 3 2 4 8 3
+7 4 8 4 8 3 4
+
+[OUTPUT]
+20
+19
+36
+
+
+<내풀이>
+지도의 각 위치들을 (0,0) ~ (n-1,n-1) 를 (1번노드 ~ n*n+1번 노드) 로 재구성하여
+graph를 새로 그려서 풀었음.
+"""
+
+import sys
+import heapq
+input = sys.stdin.readline
+T = int(input())
+INF = int(1e9)
+
+def makeGraph(world, n):
+    graph = [[] for _ in range(n*n+1)]
+    count = 1 
+    for a in range(n):
+        for b in range(n):
+            value = world[a][b]
+            if a > 0:
+                graph[count].append((count-n, value))
+            if a < n-1:
+                graph[count].append((count+n, value))
+            if b > 0:
+                graph[count].append((count-1, value))
+            if b < n-1:
+                graph[count].append((count+1, value))
+            count += 1 
+    return graph
+    
+def dijkstra(graph, n):
+    q = []
+    distance = [INF] * (n*n + 1)
+    distance[1] = 0 #무조건 시작은 1`
+    heapq.heappush(q, (0, 1))
+    
+    while q:
+        lens, node = heapq.heappop(q)
+        if lens > distance[node]:
+            continue
+        for item in graph[node]:
+            cost = item[1] + lens
+            if cost < distance[item[0]]:
+                distance[item[0]] = cost
+                heapq.heappush(q, (cost, item[0]))
+    return distance[-1]
+
+result = []
+for _ in range(T):
+    n = int(input())
+    world = []
+    for _ in range(n):
+        world.append(list(map(int, input().split())))
+        
+    graph = makeGraph(world, n) #O(NN)
+    result.append(dijkstra(graph, n)+world[n-1][n-1]) #O(NlogN)
+
+for item in result:
+    print(item)
+    
+    
