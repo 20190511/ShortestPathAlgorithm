@@ -12,7 +12,7 @@
 4. [A-38 정확한 순위](https://github.com/20190511/ShortestPathAlgorithm/blob/main/%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/A-38.py "K대회")
 5. [A-39 화성 탐사](https://github.com/20190511/ShortestPathAlgorithm/blob/main/%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/A-39.py "ACM-ICPC")
 6. [A-40 숨바꼭질](https://github.com/20190511/ShortestPathAlgorithm/blob/main/%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/A-40.py "USACO-다익스트라 ")
-6-2. [A-40 숨바꼭질(BFS 풀이)](https://github.com/20190511/ShortestPathAlgorithm/blob/main/%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/A-40(BFS).py "USACO-BFS 풀이")
+7. [A-40 숨바꼭질(BFS 풀이)](https://github.com/20190511/ShortestPathAlgorithm/blob/main/%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/A-40(BFS).py "USACO-BFS 풀이")
 ---
 
 ## 다익스트라 (dihkstra) 구현 : dijkstra.py
