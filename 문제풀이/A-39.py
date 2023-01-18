@@ -1,14 +1,8 @@
 """
-A39. 화성탐사
-문제: N by N 크기의 맵이 주어졌을 때, 각 칸은 해당 칸을 지나갈 때의 비용을 의미한다.
-(0,0) 위치에서 시작해서 상하좌우로만 이동할 수 있을 때 (n-1,n-1) 위치로 가려고할 때의
-최소 비용을 구하여라. (탐사는 맵의 크기를 벗어날 수 없음)
-
 첫 째줄에 T 케이스 T(1<=T<=10)가 주어진다
 매 테스트 케이스마다 탐사크기를 의미하는 N 이 주어진다 (2<=N<=125)
 이어서 N개의 줄에걸쳐 각 칸의 비용이 주어지며 공백으로 구분한다. (0<=각 칸의 비용<=9)
 
-[INPUT]
 3
 3
 5 5 4
@@ -28,18 +22,55 @@ A39. 화성탐사
 9 4 0 7 6 4 1
 5 8 3 2 4 8 3
 7 4 8 4 8 3 4
-
-[OUTPUT]
-20
-19
-36
-
-
-<내풀이>
-지도의 각 위치들을 (0,0) ~ (n-1,n-1) 를 (1번노드 ~ n*n+1번 노드) 로 재구성하여
-graph를 새로 그려서 풀었음.
 """
+"""풀이 2 : 2차원 그래프 그대로 받기"""
+# 2차원 그래프를 heapq.heappush(q, (graph[x][y], x,y)) 형태로 힙을 구성하고
+# distance[x][y] 형태와 비교하면 된다. (1차원 노드를 2차원으로 볼 뿐인 문제)
+import sys
+import heapq
+input = sys.stdin.readline
+T = int(input())
+INF = int(1e9)
 
+def dijkstra(graph, n):
+    x, y = 0, 0
+    distance = [[INF]*n for _ in range(n)]
+    distance[x][y] = graph[x][y]
+    q = [(graph[x][y], x, y)]
+    
+    dxdy = [(1,0),(-1,0),(0,1),(0,-1)]
+    while q:
+        lens, x, y = heapq.heappop(q)
+        if lens > distance[x][y]:
+            continue
+        for dx,dy in dxdy:
+            nx,ny = dx+x,dy+y
+            if nx<0 or nx>=n or ny<0 or ny>=n:
+                continue
+            cost = graph[nx][ny] + lens
+            if cost < distance[nx][ny]:
+                heapq.heappush(q, (cost, nx, ny))
+                distance[nx][ny] = cost
+    return distance[n-1][n-1]
+            
+result = []
+for _ in range(T):
+    n = int(input())
+    graph = []
+    for _ in range(n):
+        graph.append(list(map(int, input().split())))
+    result.append(dijkstra(graph,n))
+    
+
+for item in result:
+    print(item)
+
+
+
+
+
+""" 원본 풀이 : 2차원 그래프 -> 1차원 그래프화"""
+"""
 import sys
 import heapq
 input = sys.stdin.readline
@@ -92,5 +123,5 @@ for _ in range(T):
 
 for item in result:
     print(item)
-    
-    
+"""
+
