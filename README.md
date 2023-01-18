@@ -1,10 +1,20 @@
 # Cht 9. 최단 경로 
 ---
 ## 다익스트라 (Dijkstra)
-1. 경로표시 다익스트라 [Dijkstra with navigation.py] (https://github.com/20190511/ShortestPathAlgorithm/blob/main/dijkstra/dijkstra%20with%20navigation.py)
-2. 다익스트라 구현 [dijkstra.py] (https://github.com/20190511/ShortestPathAlgorithm/blob/main/dijkstra/dijkstra.py)
-3. 힙 다익스트라 [dijkstra_heap.py] (https://github.com/20190511/ShortestPathAlgorithm/blob/main/dijkstra/dijkstra_heap.py O(MlogN))
+1. 경로표시 다익스트라 [Dijkstra with navigation.py](https://github.com/20190511/ShortestPathAlgorithm/blob/main/dijkstra/dijkstra%20with%20navigation.py)
+2. 다익스트라 구현 [dijkstra.py](https://github.com/20190511/ShortestPathAlgorithm/blob/main/dijkstra/dijkstra.py)
+3. 힙 다익스트라 [dijkstra_heap.py](https://github.com/20190511/ShortestPathAlgorithm/blob/main/dijkstra/dijkstra_heap.py O(MlogN))
 ---
+## 문제풀이 예제
+1. [Q2-미래도시](https://github.com/20190511/ShortestPathAlgorithm/blob/main/%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/Q2-%EB%AF%B8%EB%9E%98%EB%8F%84%EC%8B%9C.py)
+2. [Q3-전보](https://github.com/20190511/ShortestPathAlgorithm/blob/main/%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/Q3-%EC%A0%84%EB%B3%B4.py)
+3. [A-37 플로이드](https://github.com/20190511/ShortestPathAlgorithm/blob/main/%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/A-37.py 백준-11404)
+4. [A-38 정확한 순위](https://github.com/20190511/ShortestPathAlgorithm/blob/main/%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/A-38.py K대회)
+5. [A-39 화성 탐사](https://github.com/20190511/ShortestPathAlgorithm/blob/main/%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/A-39.py ACM-ICPC)
+6. [A-40 숨바꼭질](https://github.com/20190511/ShortestPathAlgorithm/blob/main/%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/A-40.py USACO)
+6-2. [A-40 숨바꼭질(BFS 풀이)](https://github.com/20190511/ShortestPathAlgorithm/blob/main/%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/A-40(BFS).py USACO-BFS)
+---
+
 ## 다익스트라 (dihkstra) 구현 : dijkstra.py
 ## 다익스트라 (dijkstra with heap) 구현 : dijkstra_heap.py
 ## Heap 구조 예시 : HeapExample.py
